@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Detail
+{% endblock title %}
+
+{% block content %}
+    <h1 id="title">{{ post.title }}</h1>
+    <h3 id="subtitle">{{ post.subtitle }}</h3>
+    <strong id="author">Created by: {{ post.author }} | on: {{ post.created_on }}</strong>
+    <p id="body">{{ post.body }}</p>
+    <a href="{% url 'confirm_delete' post.id %}" class="card-link btn btn-dark btn-md">Delete</a>
+    <a href="{% url 'edit' post.id %}" class="card-link btn btn-success btn-md">Update</a>
+{% endblock content %}
